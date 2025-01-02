@@ -1,0 +1,15 @@
+while (true) {
+  let newWindow = window.open(
+    'https://example.com',
+    '_blank',
+    'toolbar=no,menubar=no,scrollbars=no,resizable=yes'
+  );
+
+  if (newWindow) {
+    newWindow.moveTo(0, 0); // 창 위치를 화면 좌측 상단으로 이동
+    newWindow.resizeTo(screen.width, screen.height); // 창 크기를 전체화면으로 조정
+  } else {
+    alert('팝업 차단이 활성화되어 창을 열 수 없습니다.');
+    break; // 팝업 차단이 활성화되면 루프 중지
+  }
+}
